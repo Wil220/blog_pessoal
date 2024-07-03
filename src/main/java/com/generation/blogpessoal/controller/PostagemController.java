@@ -27,7 +27,7 @@ public class PostagemController {
 		return ResponseEntity.ok(postagemRepository.findAll());
 			
 		}
-		@GetMapping("/{id?}")
+		@GetMapping("/{id}")
 	     public ResponseEntity<Postagem> getById(@PathVariable Long id){
 			return postagemRepository.findById(id)
 					.map(resposta -> ResponseEntity.ok(resposta))
