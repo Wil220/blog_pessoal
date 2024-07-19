@@ -1,4 +1,3 @@
-
 package com.generation.blogpessoal.security;
 
 import java.security.Key;

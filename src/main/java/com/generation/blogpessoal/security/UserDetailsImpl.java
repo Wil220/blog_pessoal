@@ -8,65 +8,57 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.generation.blogpessoal.model.Usuario;
 
-public class UserDetailsImpl implements UserDetails{
-	
-private static final long serialVersionUID = 1L;
+public class UserDetailsImpl implements UserDetails {
 
-private String userName;
-private String password;
-private List<GrantedAuthority> authorities;
+	private static final long serialVersionUID = 1L;
 
-public UserDetailsImpl(Usuario user) {
-	this.setUserName(user.getUsuario());
-	this.setPassword(user.getSenha());
-}
-public UserDetailsImpl() { }
+	private String userName;
+	private String password;
+	private List<GrantedAuthority> authorities;
 
-@Override
-public Collection<? extends GrantedAuthority> getAuthorities() {
-	
-	return null;
-}
-@Override
-public String getPassword() {
-	
-	return null;
-}
-@Override
-public String getUsername() {
-	
-	return null;
-}
-@Override
-public boolean isAccountNonExpired() {
-	return true;
-}
+	public UserDetailsImpl(Usuario user) {
+		this.userName = user.getUsuario();
+		this.password = user.getSenha();
+	}
 
-@Override
-public boolean isAccountNonLocked() {
-	return true;
-}
+	public UserDetailsImpl() {	}
 
-@Override
-public boolean isCredentialsNonExpired() {
-	return true;
-}
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
 
-@Override
-public boolean isEnabled() {
-	return true;
-}
-public String getUserName() {
-	return userName;
-}
-public void setUserName(String userName) {
-	this.userName = userName;
-}
-public void setPassword(String password) {
-	this.password = password;
-}
-public void setAuthorities(List<GrantedAuthority> authorities) {
-	this.authorities = authorities;
-}
+		return authorities;
+	}
+
+	@Override
+	public String getPassword() {
+
+		return password;
+	}
+
+	@Override
+	public String getUsername() {
+
+		return userName;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return true;
+	}
 
 }
